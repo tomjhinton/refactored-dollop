@@ -40,14 +40,10 @@ class User(db.Entity):
 
 class UserSchema(Schema):
     id = fields.Int(dump_only=True)
-    username = fields.Str(required=True)
-    lookingforwork = fields.Bool(required=True)
-    photo = fields.Str(required=True)
+    name = fields.Str(required=True)
     email = fields.Str(required=True)
     password = fields.Str(load_only=True)
     password_confirmation = fields.Str(load_only=True)
-    works = fields.Nested('WorkSchema', many=True, dump_only=True)
-    bio = fields.Str()
 
 
 
