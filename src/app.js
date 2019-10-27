@@ -4,6 +4,9 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import 'bulma'
 import './style.scss'
 
+import Home from './components/common/Home'
+import Navbar from './components/common/Navbar'
+import Record from './components/show/Record'
 
 class App extends React.Component {
   constructor(){
@@ -22,7 +25,11 @@ class App extends React.Component {
 
       <Router>
         <main>
-          Hi
+          <Navbar />
+          <Switch>
+            <Route path="/records/:id" component={Record}/>
+            <Route path="/" component={Home} />
+          </Switch>
         </main>
       </Router>
 
