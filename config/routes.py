@@ -1,11 +1,13 @@
 import os
 from app import app
-from controllers import  users, records
+from controllers import  users, records, orders
 
 
 app.register_blueprint(users.router, url_prefix='/api')
 
 app.register_blueprint(records.router, url_prefix='/api')
+
+app.register_blueprint(orders.router, url_prefix='/api')
 
 
 

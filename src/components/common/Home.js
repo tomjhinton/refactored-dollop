@@ -33,7 +33,17 @@ class Home extends React.Component{
 
         {this.state.records &&
           <div>
-            <div className='card-image'><img src={this.state.records[pickOTW].cover}></img></div>
+            <div className='title'>
+              Record of the Week
+            </div>
+            <div className='columns is-multiline is-mobile'>
+            <div className='column is-4'>
+            <figure className="image is-256x256"><img src={this.state.records[pickOTW].cover}></img></figure>
+          </div>
+            <div className='column'>
+              {this.state.records[pickOTW].description}
+              </div>
+              </div>
             <div className= 'card-header-title'>
               {this.state.records[pickOTW].title}
             </div>
@@ -41,6 +51,9 @@ class Home extends React.Component{
               {this.state.records[pickOTW].artist}
             </div>
 
+            <div className='title'>
+              New Releases
+            </div>
             <div className='columns is-multiline is-mobile'>
 
 

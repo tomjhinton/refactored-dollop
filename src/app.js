@@ -6,6 +6,7 @@ import './style.scss'
 
 import Home from './components/common/Home'
 import Navbar from './components/common/Navbar'
+import Footer from './components/common/Footer'
 import Record from './components/show/Record'
 
 class App extends React.Component {
@@ -29,8 +30,13 @@ class App extends React.Component {
           <Switch>
             <Route path="/records/:id" component={Record}/>
             <Route path="/" component={Home} />
+
           </Switch>
+
         </main>
+        <footer>
+          <Footer/>
+        </footer>
       </Router>
 
 

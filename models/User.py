@@ -11,6 +11,7 @@ from config.environment import secret
 class User(db.Entity):
     username = Required(str, unique=True)
     email = Required(str, unique=True)
+    address = Optional(str)
     password_hash = Required(str)
 
 
@@ -42,6 +43,7 @@ class UserSchema(Schema):
     id = fields.Int(dump_only=True)
     username = fields.Str(required=True)
     email = fields.Str(required=True)
+    address = fields.Str()
     password = fields.Str(load_only=True)
     password_confirmation = fields.Str(load_only=True)
 
